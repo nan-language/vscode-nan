@@ -1,0 +1,4 @@
+package-lock.json
+syntaxes/nan.tmLanguage.json
+test/grammars/
+*.md

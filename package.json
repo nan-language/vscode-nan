@@ -1,0 +1,73 @@
+{
+  "name": "nan",
+  "displayName": "NaN",
+  "description": "NaN language support for Visual Studio Code: syntax highlighting for .nan files and nan code blocks in Markdown.",
+  "version": "0.1.0",
+  "publisher": "nan-language",
+  "repository": "github:nan-language/vscode-nan",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=26",
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "nan",
+        "aliases": [
+          "NaN"
+        ],
+        "extensions": [
+          ".nan"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "nan",
+        "scopeName": "source.nan",
+        "path": "./syntaxes/nan.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.nan.codeblock",
+        "path": "./syntaxes/nan-markdown.tmLanguage.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.nan": "nan"
+        }
+      }
+    ],
+    "configurationDefaults": {
+      "[nan]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.detectIndentation": false,
+        "files.trimTrailingWhitespace": true
+      }
+    }
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . && tsc && prettier --check .",
+    "test": "vscode-tmgrammar-test --grammar test/grammars/markdown.tmLanguage.json",
+    "sync-grammars": "node scripts/sync-grammars.ts",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "26.6.5",
+    "@vscode/vsce": "4.0.0",
+    "eslint": "10.13.0",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.0",
+    "vscode-tmgrammar-test": "0.1.3"
+  }
+}
