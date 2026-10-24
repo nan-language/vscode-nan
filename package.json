@@ -24,7 +24,11 @@
         "extensions": [
           ".nan"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/nan-light.svg",
+          "dark": "./icons/nan-dark.svg"
+        }
       }
     ],
     "grammars": [

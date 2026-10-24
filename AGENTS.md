@@ -2,11 +2,11 @@
 
 ## Project
 
-vscode-nan is the Visual Studio Code extension of the NaN programming language. It highlights `.nan` files and `nan` code blocks in Markdown.
+vscode-nan is the Visual Studio Code extension of the NaN programming language. It highlights `.nan` files and `nan` code blocks in Markdown, and gives `.nan` files an icon.
 
 ## Architecture
 
-The extension is declarative: `package.json` contributes the NaN language, its editor configuration and two TextMate grammars. `syntaxes/nan.tmLanguage.json` is a copy of the grammar of the `nan-language/nan` repository at the commit `scripts/sync-grammars.ts` pins, never edited here; `syntaxes/nan-markdown.tmLanguage.json` injects it into Markdown code blocks. The tests run the grammars with VS Code's TextMate engine against annotated files, loading VS Code's Markdown grammar from the release the same script pins.
+The extension is declarative: `package.json` contributes the NaN language, its editor configuration, its file icon and two TextMate grammars. `syntaxes/nan.tmLanguage.json` is a copy of the grammar of the `nan-language/nan` repository at the commit `scripts/sync-grammars.ts` pins, never edited here; `syntaxes/nan-markdown.tmLanguage.json` injects it into Markdown code blocks. The tests run the grammars with VS Code's TextMate engine against annotated files, loading VS Code's Markdown grammar from the release the same script pins.
 
 Only what an agent needs to place a change correctly. The why is in ADRs.
 
@@ -14,6 +14,7 @@ Only what an agent needs to place a change correctly. The why is in ADRs.
 
 | Path | Holds |
 | --- | --- |
+| `icons/` | The file icon of `.nan` files, one SVG per theme kind |
 | `syntaxes/` | The TextMate grammars the extension contributes |
 | `scripts/` | Development scripts, run by Node from TypeScript |
 | `test/` | Grammar tests, one annotated `*.test.md` file per feature, and the grammars they load in `grammars/` |

@@ -1,6 +1,6 @@
 # vscode-nan
 
-NaN language support for Visual Studio Code: syntax highlighting for `.nan` files and `nan` code blocks in Markdown.
+NaN language support for Visual Studio Code: syntax highlighting and a file icon for `.nan` files, and highlighting of `nan` code blocks in Markdown.
 
 ## Development
 
