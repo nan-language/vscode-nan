@@ -1,0 +1,30 @@
+name: Publish
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Check the tag matches the package version
+        run: test "$GITHUB_REF_NAME" = "v$(node -p 'require("./package.json").version')"
+      - run: npm run lint
+      - run: npm test -- 'test/**/*.test.md'
+      - run: npx vsce package --out nan.vsix
+      - run: npx vsce publish --packagePath nan.vsix
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - run: npx ovsx publish nan.vsix
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}

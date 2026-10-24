@@ -19,6 +19,7 @@ Only what an agent needs to place a change correctly. The why is in ADRs.
 | `scripts/` | Development scripts, run by Node from TypeScript |
 | `test/` | Grammar tests, one annotated `*.test.md` file per feature, and the grammars they load in `grammars/` |
 | `docs/decisions/` | Architecture decision records |
+| `.github/` | The workflow publishing each version tag to the Marketplace and Open VSX |
 
 One row per top-level directory; deeper only where the tree alone would not tell an agent where a change belongs.
 

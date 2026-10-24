@@ -24,6 +24,8 @@ Requires Node 26.
 
 To try the extension, run `code --extensionDevelopmentPath=.` from this directory.
 
+To release, run `npm version <patch|minor|major>` and `git push --follow-tags`: the tag publishes the version to the Marketplace and Open VSX.
+
 ## License
 
 MIT
