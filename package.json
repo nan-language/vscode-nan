@@ -6,6 +6,7 @@
   "publisher": "nan-language",
   "repository": "github:nan-language/vscode-nan",
   "license": "MIT",
+  "icon": "icons/nan-marketplace.png",
   "type": "module",
   "engines": {
     "node": ">=26",

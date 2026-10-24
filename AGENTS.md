@@ -14,7 +14,7 @@ Only what an agent needs to place a change correctly. The why is in ADRs.
 
 | Path | Holds |
 | --- | --- |
-| `icons/` | The file icon of `.nan` files, one SVG per theme kind |
+| `icons/` | The file icon of `.nan` files, one SVG per theme kind, and the Marketplace icon |
 | `syntaxes/` | The TextMate grammars the extension contributes |
 | `scripts/` | Development scripts, run by Node from TypeScript |
 | `test/` | Grammar tests, one annotated `*.test.md` file per feature, and the grammars they load in `grammars/` |
